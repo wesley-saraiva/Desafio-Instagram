@@ -15,10 +15,9 @@ class ListviewPage extends StatelessWidget {
         title: const Text('List View'),
       ),
       body: ListView.separated(
-        itemCount: 100,
+        itemCount: 10,
         separatorBuilder: (context, index) {
           return Divider(
-            color: Colors.black,
             thickness: 1,
           );
         },

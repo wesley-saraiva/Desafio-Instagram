@@ -61,44 +61,28 @@ class _DesafioInstagramState extends State<DesafioInstagram> {
           ],
         ),
       ),
-      body: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: ImageAvatar(
-              urlImage:
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: ImageAvatar(
-              urlImage:
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: ImageAvatar(
-              urlImage:
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: ImageAvatar(
-              urlImage:
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: ImageAvatar(
-              urlImage:
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
-            ),
-          ),
-        ],
+      body: ListView.separated(
+        itemCount: 10,
+        separatorBuilder: (context, index) {
+          return Divider(
+            color: Colors.black,
+            thickness: 1,
+          );
+        },
+        itemBuilder: (context, index) {
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ImageAvatar(
+                  urlImage:
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }

@@ -61,14 +61,8 @@ class _DesafioInstagramState extends State<DesafioInstagram> {
           ],
         ),
       ),
-      body: ListView.separated(
-        itemCount: 10,
-        separatorBuilder: (context, index) {
-          return Divider(
-            color: Colors.black,
-            thickness: 1,
-          );
-        },
+      body: ListView.builder(
+        itemCount: 5,
         itemBuilder: (context, index) {
           return Row(
             crossAxisAlignment: CrossAxisAlignment.end,

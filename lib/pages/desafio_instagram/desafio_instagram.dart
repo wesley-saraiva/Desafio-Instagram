@@ -15,57 +15,65 @@ class _DesafioInstagramState extends State<DesafioInstagram> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text(
-          'Instagram',
-          style: TextStyle(fontSize: 25),
-        ),
-      ),
-      bottomNavigationBar: SingleChildScrollView(
-        child: BottomNavigationBar(
+        appBar: AppBar(
           backgroundColor: Colors.black,
-          currentIndex: indice,
-          onTap: (index) {
-            setState(() {
-              indice = index;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              label: '',
-              icon: Icon(Icons.home_filled, color: Colors.white),
-            ),
-            BottomNavigationBarItem(
-              label: '',
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
-            ),
-            BottomNavigationBarItem(
-              label: '',
-              icon: Icon(
-                Icons.play_arrow,
-                color: Colors.white,
-              ),
-            ),
-            BottomNavigationBarItem(
-              label: '',
-              icon: Icon(
-                Icons.play_arrow,
-                color: Colors.white,
-              ),
-            ),
-          ],
+          title: const Text(
+            'Instagram',
+            style: TextStyle(fontSize: 25),
+          ),
         ),
-      ),
-      body: ListView.builder(
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
+        bottomNavigationBar: SingleChildScrollView(
+          child: BottomNavigationBar(
+            backgroundColor: Colors.black,
+            selectedItemColor: Colors.yellow,
+            unselectedItemColor: Colors.white,
+            type: BottomNavigationBarType.fixed,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            currentIndex: indice,
+            onTap: (index) {
+              setState(() {
+                indice = index;
+              });
+            },
+            items: [
+              BottomNavigationBarItem(
+                label: '',
+                icon: Icon(
+                  Icons.home_filled,
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: '',
+                icon: Icon(
+                  Icons.search,
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: '',
+                icon: Icon(
+                  Icons.add_box_rounded,
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: '',
+                icon: Icon(
+                  Icons.favorite_rounded,
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: '',
+                icon: Icon(
+                  Icons.person_4_outlined,
+                ),
+              ),
+            ],
+          ),
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
             children: [
               Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -74,11 +82,37 @@ class _DesafioInstagramState extends State<DesafioInstagram> {
                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ImageAvatar(
+                  urlImage:
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ImageAvatar(
+                  urlImage:
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: ImageAvatar(
+                  urlImage:
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: ImageAvatar(
+                  urlImage:
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
+                ),
+              ),
             ],
-          );
-        },
-      ),
-    );
+          ),
+        ));
   }
 }
 

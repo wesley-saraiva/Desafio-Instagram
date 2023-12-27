@@ -15,104 +15,125 @@ class _DesafioInstagramState extends State<DesafioInstagram> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
-        appBar: AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(Icons.add_box_outlined, size: 30),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(Icons.favorite_border, size: 30),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(Icons.messenger_outline_sharp, size: 30),
+          ),
+        ],
+        title: const Text(
+          'Instagram',
+          style: TextStyle(fontSize: 25),
+        ),
+      ),
+      bottomNavigationBar: SingleChildScrollView(
+        child: BottomNavigationBar(
           backgroundColor: Colors.black,
-          title: const Text(
-            'Instagram',
-            style: TextStyle(fontSize: 25),
-          ),
+          selectedItemColor: Colors.red,
+          unselectedItemColor: Colors.white,
+          type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          currentIndex: indice,
+          onTap: (index) {
+            setState(() {
+              indice = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              label: '',
+              icon: Icon(
+                Icons.home_filled,
+                size: 30,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: '',
+              icon: Icon(
+                Icons.search,
+                size: 30,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: '',
+              icon: Icon(
+                Icons.add_box_rounded,
+                size: 30,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: '',
+              icon: Icon(
+                Icons.favorite_rounded,
+                size: 30,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: '',
+              icon: Icon(
+                Icons.person_4_outlined,
+                size: 30,
+              ),
+            ),
+          ],
         ),
-        bottomNavigationBar: SingleChildScrollView(
-          child: BottomNavigationBar(
-            backgroundColor: Colors.black,
-            selectedItemColor: Colors.yellow,
-            unselectedItemColor: Colors.white,
-            type: BottomNavigationBarType.fixed,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            currentIndex: indice,
-            onTap: (index) {
-              setState(() {
-                indice = index;
-              });
-            },
-            items: [
-              BottomNavigationBarItem(
-                label: '',
-                icon: Icon(
-                  Icons.home_filled,
-                ),
+      ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ImageAvatar(
+                urlImage:
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
               ),
-              BottomNavigationBarItem(
-                label: '',
-                icon: Icon(
-                  Icons.search,
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ImageAvatar(
+                urlImage:
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
               ),
-              BottomNavigationBarItem(
-                label: '',
-                icon: Icon(
-                  Icons.add_box_rounded,
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ImageAvatar(
+                urlImage:
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
               ),
-              BottomNavigationBarItem(
-                label: '',
-                icon: Icon(
-                  Icons.favorite_rounded,
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: ImageAvatar(
+                urlImage:
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
               ),
-              BottomNavigationBarItem(
-                label: '',
-                icon: Icon(
-                  Icons.person_4_outlined,
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: ImageAvatar(
+                urlImage:
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: ImageAvatar(
-                  urlImage:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: ImageAvatar(
-                  urlImage:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: ImageAvatar(
-                  urlImage:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ImageAvatar(
-                  urlImage:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: ImageAvatar(
-                  urlImage:
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt5WOv-1AShQtJ4-sn9z6jiiM9EZZ4Ehel4JcnvDJZtQ&s',
-                ),
-              ),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }
 
